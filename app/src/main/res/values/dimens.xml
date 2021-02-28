@@ -1,0 +1,11 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_18_dp">18dp</dimen>
+    <dimen name="margin_32_dp">32dp</dimen>
+    <dimen name="margin_242_dp">24dp</dimen>
+    <dimen name="margin_extra_small">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="large_text_size">26sp</dimen>
+    <dimen name="medium_text_size">18sp</dimen>
+</resources>

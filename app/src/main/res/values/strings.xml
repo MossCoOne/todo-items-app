@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ToDoApp</string>
+    <string name="action_delete_all">Delete all</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="work_things_to_complete"><u>Work Things to Complete   </u></string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="progress_bar_title">Progress</string>
+    <string name="todo_item_title">Title</string>
+    <string name="todo_item_description">Description</string>
+    <string name="add_to_do_item">Add Item</string>
+    <string name="cancel">Cancel</string>
+    <string name="todo_label">To do</string>
+    <string name="item_not_added">Item was not added, please enter item title and description</string>
+    <string name="item_deleted">Items Deleted</string>
+</resources>
