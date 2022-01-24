@@ -4,27 +4,20 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.mossco.todoapp.database.TodoItem
 import com.mossco.todoapp.database.TodoItemsDatabase
 import com.mossco.todoapp.database.TodoItemsDatabaseDao
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 class TodoItemsViewModel(application: Application) : AndroidViewModel(application) {
+
     private val todoItemDao: TodoItemsDatabaseDao =
         TodoItemsDatabase.getInstance(application).todoItemDatabaseDao
-    private var viewModelJob = Job()
-    private val viewModelScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
     val todoItemList: LiveData<List<TodoItem>> = todoItemDao.getAllItems()
-    val percentageOfCompletedItems: MutableLiveData<Int> by lazy {
-        MutableLiveData<Int>()
-    }
-    val showFeedbackMessageEvent: MutableLiveData<String> by lazy {
-        MutableLiveData<String>()
-    }
+    val percentageOfCompletedItems = MutableLiveData<Int> ()
+    val showFeedbackMessageEvent= MutableLiveData<String>()
 
     private suspend fun insertItem(todoItem: TodoItem) {
         todoItemDao.insertItem(todoItem)
@@ -76,10 +69,5 @@ class TodoItemsViewModel(application: Application) : AndroidViewModel(applicatio
             showFeedbackMessageEvent.value =
                 getApplication<Application>().getString(R.string.item_deleted)
         }
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        viewModelJob.cancel()
     }
 }
